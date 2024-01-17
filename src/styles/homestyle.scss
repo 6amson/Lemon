@@ -1,0 +1,17 @@
+#heroPage--right{
+    background-image: url('../images/homepagePhoto.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#menuIcon{
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 850px) {
+   #menuIcon{
+    display: block;
+   }
+}
