@@ -7,7 +7,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    color: rgb(199, 195, 195);
 }
 
 #menuIcon {
@@ -16,7 +15,6 @@
 }
 
 #risk--secondContainer{
-    display: block;
     background: #FBCA3F;
     width: fit-content;
     padding: 32px;
@@ -30,8 +28,35 @@
 
     p:nth-child(2){
         font-size: 16px;
+
     }
 }
+
+#appsection--spareimage1{
+    background: url("../images/suitLemon.png");
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 200px;
+}
+
+#appsection--spareimage2{
+    background: url("../images/olderwomanLemon.png");
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: -100px;
+    top: -50px;
+}
+
+
 
 @media (max-width: 850px) {
     #menuIcon {

@@ -1,4 +1,4 @@
-import { Container, Header, Button, Ul, HeroContainer, BrandContainer, Servicesoffered, RiskAssessment, Riskscale, StyledRangeInput, Riskscaleoptions, Riskscaleoptionsmore } from "../../styles/homestyle";
+import { Container, Header, Button, Ul, HeroContainer, BrandContainer, Servicesoffered, RiskAssessment, Riskscale, StyledRangeInput, Riskscaleoptions, Riskscaleoptionsmore, Appsection, Appsectionimage, AppsectionPert } from "../../styles/homestyle";
 import logohome from "../../images/logohome.svg";
 import menuIcon from "../../images/iconsMenu.png";
 import airbnb from "../../images/airbnb.svg";
@@ -8,13 +8,17 @@ import soundcloud from "../../images/soundcloud.svg";
 import "../../styles/homestyle.scss";
 import coinLemon from "../../images/coinLemon.png";
 import teamLemon from "../../images/teamLemon.png"
-import phoneLemon from "../../images/phoneLemon.png"
+import phoneLemon from "../../images/phoneLemon.png";
+import model1 from "../../images/lemonModel.png";
+import model2 from "../../images/suitLemon.png";
+import model3 from "../../images/olderwomanLemon.png";
+
 
 
 
 export default function Home() {
 
-    const dynamicWidth1 = `${10 *  4.5}%`;
+    const dynamicWidth1 = `${10 * 4.5}%`;
 
     return (
         <>
@@ -87,10 +91,11 @@ export default function Home() {
                             <div style={{ backgroundColor: 'rgb(239, 189, 191)' }}>Commodities: <p>40%</p></div>
                         </Riskscaleoptions>
                         <Riskscaleoptionsmore>
-                        <div>Real estate: <p>0%</p></div>
-                        <div>T-bills: <p>0%</p></div>
-                        <div>Alternative: <p>0%</p></div>
+                            <div>Real estate: <p>0%</p></div>
+                            <div>T-bills: <p>0%</p></div>
+                            <div>Alternative: <p>0%</p></div>
                         </Riskscaleoptionsmore>
+                        <Button>Get started</Button>
                     </div>
 
                     <div id="risk--secondContainer">
@@ -98,6 +103,19 @@ export default function Home() {
                         <p>Just answer a few questions, and we’ll build you a personalized portfolio of low-cost index funds from up to 17 global asset classes. Our software handles all the trading, rebalancing, and other busywork to help grow your wealth for the long term.</p>
                     </div>
                 </RiskAssessment>
+                <Appsection>
+                    <div>
+                        <p>With a small fee, <span>we can do big things at</span></p>
+                        <AppsectionPert>0.25%.</AppsectionPert>
+                        <p>For just 0.25% a year, Automated Investing Account clients get all the benefits of always-on automation,
+                            expert-curated portfolios, and Tax-Loss Harvesting that typically covers our fee more than 11x over.</p>
+                    </div>
+                    <Appsectionimage>
+                        <img src={model1} alt="model for lemon" width="250px" height="400px" />
+                        <div id="appsection--spareimage1"></div>
+                        <div id="appsection--spareimage2"></div>
+                    </Appsectionimage>
+                </Appsection>
             </Container>
         </>
     )

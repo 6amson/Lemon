@@ -167,7 +167,6 @@ export const HeroContainer = styled.div`
     border: solid 1px black;
     font-weight: 600;
     padding: 20px 30px;
-    z-index: 10;
 
 
     &:hover{
@@ -229,7 +228,7 @@ div{
 
 export const Servicesoffered = styled.div`
  background: black;
- height: fir-content;
+ height: fit-content;
  padding-left: 32px;
  padding-right: 16px;
  color: whitesmoke;
@@ -278,10 +277,26 @@ padding-right: 32px;
 grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 font-family: ClashDisplay-Variable; 
 grid-gap: 16px;
+margin-bottom: 128px;
+
+button{
+    background: black;
+    color: white;
+    border: solid 1px black;
+    font-weight: 600;
+    padding: 20px 30px;
+    margin-left: -8px;
+    margin-top: 32px;
+
+
+    &:hover{
+        background: #FBCA3F;
+        color: black;
+    }
+   }
 
 div:not(:first-child) {
-    // display: flex;
-
+    font-weight: 500;
     p{
         margin-left: 16px;
     }
@@ -290,10 +305,10 @@ div:not(:first-child) {
 `
 
 export const Riskscale = styled.div`
-    background: white;
+    background:  white;
     border-radius: 16px;
     padding: 16px;
-    width: 50%;
+    width: 70%;
     box-shadow: .5px .5px 3px .5px #323143;
     place-items: center;
     display: grid;
@@ -301,7 +316,7 @@ export const Riskscale = styled.div`
     margin-left: -8px;
 
     p{
-        font-weight: 500;
+        font-weight: 600;
     }
 
     input{
@@ -322,6 +337,7 @@ export const Riskscaleoptions = styled.div`
         margin-bottom: 16px;
         padding: 8px;
         margin-right: 16px;
+        border-radius: 8px;
     }
 `
 
@@ -330,9 +346,6 @@ display: flex;
 
     div{
         display: flex;
-        // background: red;
-        // margin-bottom: 16px;
-        // padding: 8px;
         margin-right: 16px;
     }
 `
@@ -343,7 +356,7 @@ export const StyledRangeInput = styled.input`
   appearance: none;
   margin-left: 16px;
   background-color: black;
-  background: linear-gradient(to right, grey, black);
+//   background: linear-gradient(to right, grey, #FBCA3F, black);
   height: 5px;
   border-radius: 4px;
 
@@ -352,7 +365,7 @@ export const StyledRangeInput = styled.input`
     appearance: none;
     width: 20px;
     height: 20px;
-    background-color: white;
+    background-color: whitesmoke;
     box-shadow: .5px .5px 3px .5px #323143;
     border-radius: 50%;
     cursor: pointer;
@@ -365,4 +378,65 @@ export const StyledRangeInput = styled.input`
     border-radius: 50%;
     cursor: pointer;
   }
+`
+
+export const Appsection = styled.div`
+  background: rgb(255, 245, 214);
+  width: 100vw;
+  height: fit-content;
+  position: relative;
+  height: max-content;
+  margin-top: 128px;
+  width: 100vw;
+  display: grid;
+  gap: 64px;
+  place-items:  center;
+  padding: 64px 32px 64px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  font-family: ClashDisplay-Variable; 
+
+  div:first-child{
+    place-items: center; 
+
+    @media (max-width: 850px) {
+        margin-bottom: 32px;
+    }
+
+    p:not(p:first-child){
+
+    }
+    
+    p:first-child{
+        font-size: 72px;
+        font-weight: 700;
+        margin-bottom: 16px;
+
+        span{
+            font-family: DancingScript-Regular;
+            margin-left: 16px;
+        }
+    }
+  }
+
+
+`
+
+export const Appsectionimage = styled.div`
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  img:first-child{
+    border-radius: 100px;
+  }
+
+  div:last-child{
+
+  }
+`
+
+export const AppsectionPert = styled.div`
+    font-size: 72px;
+    font-weight: 700;
+    color: #FBCA3F;
 `
