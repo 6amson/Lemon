@@ -356,7 +356,7 @@ export const StyledRangeInput = styled.input`
   appearance: none;
   margin-left: 16px;
   background-color: black;
-//   background: linear-gradient(to right, grey, #FBCA3F, black);
+  background: linear-gradient(to right, grey, whitesmoke, black);
   height: 5px;
   border-radius: 4px;
 
@@ -378,6 +378,36 @@ export const StyledRangeInput = styled.input`
     border-radius: 50%;
     cursor: pointer;
   }
+`
+
+export const Riskcomment = styled.div`
+background: #FBCA3F;
+width: fit-content;
+padding: 32px;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+margin-left: -16px;
+
+p:first-child{
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+p:not(p:first-child){
+    font-size: 16px;
+}
+
+@media (max-width: 560px) {
+
+    margin-left: -16px;
+    margin-top: 64px;
+
+    p:first-child {
+        font-size: 56px;
+    }
+}
 `
 
 export const Appsection = styled.div`

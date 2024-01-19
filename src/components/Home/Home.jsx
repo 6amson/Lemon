@@ -1,4 +1,4 @@
-import { Container, Header, Button, Ul, HeroContainer, BrandContainer, Servicesoffered, RiskAssessment, Riskscale, StyledRangeInput, Riskscaleoptions, Riskscaleoptionsmore, Appsection, Appsectionimage, AppsectionPert } from "../../styles/homestyle";
+import { Container, Header, Button, Ul, HeroContainer, BrandContainer, Servicesoffered, RiskAssessment, Riskscale, StyledRangeInput, Riskscaleoptions, Riskscaleoptionsmore, Appsection, Appsectionimage, AppsectionPert,Riskcomment } from "../../styles/homestyle";
 import logohome from "../../images/logohome.svg";
 import menuIcon from "../../images/iconsMenu.png";
 import airbnb from "../../images/airbnb.svg";
@@ -98,10 +98,11 @@ export default function Home() {
                         <Button>Get started</Button>
                     </div>
 
-                    <div id="risk--secondContainer">
+                    <Riskcomment>
                         <p>Interact with our risk assessment scale</p>
                         <p>Just answer a few questions, and we’ll build you a personalized portfolio of low-cost index funds from up to 17 global asset classes. Our software handles all the trading, rebalancing, and other busywork to help grow your wealth for the long term.</p>
-                    </div>
+                    </Riskcomment>
+
                 </RiskAssessment>
                 <Appsection>
                     <div>
