@@ -15,7 +15,7 @@ export const Container = styled.div`
 `
 export const Header = styled.header`
     height: 80px;
-    width: calc(100vw - 20px);
+    width: 100vw;
     top: -8px;
     box-shadow: .5px .5px 8px .5px #323143;
     display: flex;
@@ -111,7 +111,7 @@ export const Button = styled.button`
 export const HeroContainer = styled.div`
     height: max-content;
     margin-top: 128px;
-    width: calc(100vw - 20px);
+    width: 100vw;
    display: grid;
    padding-left: 40px;
    padding-right: 32px;
@@ -188,7 +188,7 @@ export const HeroContainer = styled.div`
 export const BrandContainer = styled.div`
 margin-top: 128px;
 margin-bottom: 64px;
-width: calc(100vw - 20px);
+width: 100vw;
 
 
 
@@ -233,7 +233,7 @@ export const Servicesoffered = styled.div`
  padding-left: 32px;
  padding-right: 16px;
  color: whitesmoke;
- width: calc(100vw - 20px);
+ width: 100vw;
 
  div{
     display: flex;
@@ -271,7 +271,7 @@ export const Servicesoffered = styled.div`
 export const RiskAssessment = styled.div`
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-width: calc(100vw - 20px);
+width: 100vw;
 grid-gap: 16px;
 backgorund: red;
 `
