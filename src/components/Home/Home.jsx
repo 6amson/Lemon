@@ -53,7 +53,7 @@ export default function Home() {
                         <img src={phoneLemon} alt="phone 3d illustration" width="230px" height="200px" />
                     </div>
                     <div>
-                        <img src={teamLemon} alt="team 3d illustration" width="250px" height="200px" />
+                        <img id="teamLemon" src={teamLemon} alt="team 3d illustration" width="250px" height="200px" />
                         <p>We go beyond traditional asset management. Our team brings strategic insights, leveraging market trends and data analytics to make informed decisions that drive positive outcomes for your portfolio.</p>
                     </div>
                     <div>
@@ -63,6 +63,8 @@ export default function Home() {
                 </Servicesoffered>
                 <RiskAssessment>
                     <div>
+                        <div></div>
+                        <p>Risk assessment scale: 10.0</p>
                         <input
                             type="range"
                             // id={`rangeInput-${key}`}
@@ -70,15 +72,24 @@ export default function Home() {
                             max="10"
                             // value={values[key]}
                             step="1"
-                            // onChange={(event) => handleInputChange(key, event)}
+                        // onChange={(event) => handleInputChange(key, event)}
                         />
-
                     </div>
-                    <div>
-
-                    </div>
-                </RiskAssessment>
-            </Container>
+                    <div>Nigerian stocks: <p>40%</p></div>
+                    <div>Foreign stocks: <p>40%</p></div>
+                    <div>Tech stocks: <p>40%</p></div>
+                    <div>Nigerian bonds: <p>40%</p></div>
+                    <div>Foreign bonds: <p>40%</p></div>
+                    <div>Commodities: <p>40%</p></div>
+                    <div>Real estate: <p>0%</p></div>
+                    <div>T-bills: <p>0%</p></div>
+                    <div>Alternative: <p>0%</p></div>
+                <div>
+                    <p>Interact with our risk assessment scale</p>
+                    <p>Just answer a few questions, and we’ll build you a personalized portfolio of low-cost index funds from up to 17 global asset classes. Our software handles all the trading, rebalancing, and other busywork to help grow your wealth for the long term.</p>
+                </div>
+            </RiskAssessment>
+        </Container>
         </>
     )
 }

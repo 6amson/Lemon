@@ -269,9 +269,13 @@ export const Servicesoffered = styled.div`
 `
 
 export const RiskAssessment = styled.div`
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+height: max-content;
+margin-top: 128px;
 width: 100vw;
+display: grid;
+padding-left: 40px;
+padding-right: 32px;
+grid-template-columns: repeat(2, 1fr);
+font-family: ClashDisplay-Variable; 
 grid-gap: 16px;
-backgorund: red;
 `

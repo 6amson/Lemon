@@ -1,17 +1,23 @@
-#heroPage--right{
+#heroPage--right {
     background-image: url('../images/homepagePhoto.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
-#menuIcon{
+#menuIcon {
     display: none;
     cursor: pointer;
 }
 
 @media (max-width: 850px) {
-   #menuIcon{
-    display: block;
-   }
+    #menuIcon {
+        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+    #teamLemon{
+        height: 150px;
+    }
 }
