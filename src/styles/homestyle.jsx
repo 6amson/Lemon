@@ -298,6 +298,7 @@ export const Riskscale = styled.div`
     place-items: center;
     display: grid;
     margin-bottom: 32px;
+    margin-left: -8px;
 
     p{
         font-weight: 500;
@@ -309,7 +310,7 @@ export const Riskscale = styled.div`
     }
 
     @media (max-width: 600px) {
-       width: 100%;
+       width: 90%;
     }
 
 `
