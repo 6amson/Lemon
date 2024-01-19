@@ -1,4 +1,4 @@
-import { Container, Header, Button, Ul, HeroContainer, BrandContainer, Servicesoffered, RiskAssessment, Riskscale, StyledRangeInput } from "../../styles/homestyle";
+import { Container, Header, Button, Ul, HeroContainer, BrandContainer, Servicesoffered, RiskAssessment, Riskscale, StyledRangeInput, Riskscaleoptions, Riskscaleoptionsmore } from "../../styles/homestyle";
 import logohome from "../../images/logohome.svg";
 import menuIcon from "../../images/iconsMenu.png";
 import airbnb from "../../images/airbnb.svg";
@@ -13,6 +13,9 @@ import phoneLemon from "../../images/phoneLemon.png"
 
 
 export default function Home() {
+
+    const dynamicWidth1 = `${10 *  4.5}%`;
+
     return (
         <>
             <Container>
@@ -75,15 +78,19 @@ export default function Home() {
                             // onChange={(event) => handleInputChange(key, event)}
                             />
                         </Riskscale>
-                        <div>Nigerian stocks: <p>40%</p></div>
-                        <div>Foreign stocks: <p>40%</p></div>
-                        <div>Tech stocks: <p>40%</p></div>
-                        <div>Nigerian bonds: <p>40%</p></div>
-                        <div>Foreign bonds: <p>40%</p></div>
-                        <div>Commodities: <p>40%</p></div>
+                        <Riskscaleoptions>
+                            <div style={{ backgroundColor: 'rgb(189, 189, 239)', width: dynamicWidth1, }}>Nigerian stocks: <p>40%</p></div>
+                            <div style={{ backgroundColor: 'rgb(189, 239, 208)' }}>Foreign stocks: <p>40%</p></div>
+                            <div style={{ backgroundColor: 'rgb(239, 209, 189)' }}>Tech stocks: <p>40%</p></div>
+                            <div style={{ backgroundColor: 'rgb(189, 222, 239)' }}>Nigerian bonds: <p>40%</p></div>
+                            <div style={{ backgroundColor: 'rgb(239, 189, 220)' }}>Foreign bonds: <p>40%</p></div>
+                            <div style={{ backgroundColor: 'rgb(239, 189, 191)' }}>Commodities: <p>40%</p></div>
+                        </Riskscaleoptions>
+                        <Riskscaleoptionsmore>
                         <div>Real estate: <p>0%</p></div>
                         <div>T-bills: <p>0%</p></div>
                         <div>Alternative: <p>0%</p></div>
+                        </Riskscaleoptionsmore>
                     </div>
 
                     <div id="risk--secondContainer">

@@ -280,7 +280,7 @@ font-family: ClashDisplay-Variable;
 grid-gap: 16px;
 
 div:not(:first-child) {
-    display: flex;
+    // display: flex;
 
     p{
         margin-left: 16px;
@@ -290,11 +290,11 @@ div:not(:first-child) {
 `
 
 export const Riskscale = styled.div`
-    background: whitesmoke;
+    background: white;
     border-radius: 16px;
     padding: 16px;
     width: 50%;
-    box-shadow: .5px .5px 8px .5px #323143;
+    box-shadow: .5px .5px 3px .5px #323143;
     place-items: center;
     display: grid;
     margin-bottom: 32px;
@@ -308,21 +308,41 @@ export const Riskscale = styled.div`
         margin-top: 16px;
     }
 
+    @media (max-width: 600px) {
+       width: 100%;
+    }
 
 `
 
+export const Riskscaleoptions = styled.div`
+    div{
+        display: flex;
+        background: red;
+        margin-bottom: 16px;
+        padding: 8px;
+        margin-right: 16px;
+    }
+`
+
+export const Riskscaleoptionsmore = styled.div`
+display: flex;
+
+    div{
+        display: flex;
+        // background: red;
+        // margin-bottom: 16px;
+        // padding: 8px;
+        margin-right: 16px;
+    }
+`
+
 export const StyledRangeInput = styled.input`
-  /* Remove the default styles */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   margin-left: 16px;
-
-
-  /* Set the width to fill its container */
-//   width: 100%;
-
   background-color: black;
+  background: linear-gradient(to right, grey, black);
   height: 5px;
   border-radius: 4px;
 
@@ -331,7 +351,8 @@ export const StyledRangeInput = styled.input`
     appearance: none;
     width: 20px;
     height: 20px;
-    background-color: #FBCA3F;
+    background-color: white;
+    box-shadow: .5px .5px 3px .5px #323143;
     border-radius: 50%;
     cursor: pointer;
   }
