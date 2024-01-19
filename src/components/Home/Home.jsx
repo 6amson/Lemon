@@ -1,4 +1,4 @@
-import { Container, Header, Button, Ul, HeroContainer, BrandContainer, Servicesoffered, RiskAssessment } from "../../styles/homestyle";
+import { Container, Header, Button, Ul, HeroContainer, BrandContainer, Servicesoffered, RiskAssessment, Riskscale, StyledRangeInput } from "../../styles/homestyle";
 import logohome from "../../images/logohome.svg";
 import menuIcon from "../../images/iconsMenu.png";
 import airbnb from "../../images/airbnb.svg";
@@ -63,33 +63,35 @@ export default function Home() {
                 </Servicesoffered>
                 <RiskAssessment>
                     <div>
-                        <div></div>
-                        <p>Risk assessment scale: 10.0</p>
-                        <input
-                            type="range"
-                            // id={`rangeInput-${key}`}
-                            min="0"
-                            max="10"
-                            // value={values[key]}
-                            step="1"
-                        // onChange={(event) => handleInputChange(key, event)}
-                        />
+                        <Riskscale>
+                            <p>Risk assessment scale: 10.0</p>
+                            <StyledRangeInput
+                                type="range"
+                                // id={`rangeInput-${key}`}
+                                min="0"
+                                max="10"
+                                // value={values[key]}
+                                step="1"
+                            // onChange={(event) => handleInputChange(key, event)}
+                            />
+                        </Riskscale>
+                        <div>Nigerian stocks: <p>40%</p></div>
+                        <div>Foreign stocks: <p>40%</p></div>
+                        <div>Tech stocks: <p>40%</p></div>
+                        <div>Nigerian bonds: <p>40%</p></div>
+                        <div>Foreign bonds: <p>40%</p></div>
+                        <div>Commodities: <p>40%</p></div>
+                        <div>Real estate: <p>0%</p></div>
+                        <div>T-bills: <p>0%</p></div>
+                        <div>Alternative: <p>0%</p></div>
                     </div>
-                    <div>Nigerian stocks: <p>40%</p></div>
-                    <div>Foreign stocks: <p>40%</p></div>
-                    <div>Tech stocks: <p>40%</p></div>
-                    <div>Nigerian bonds: <p>40%</p></div>
-                    <div>Foreign bonds: <p>40%</p></div>
-                    <div>Commodities: <p>40%</p></div>
-                    <div>Real estate: <p>0%</p></div>
-                    <div>T-bills: <p>0%</p></div>
-                    <div>Alternative: <p>0%</p></div>
-                <div>
-                    <p>Interact with our risk assessment scale</p>
-                    <p>Just answer a few questions, and we’ll build you a personalized portfolio of low-cost index funds from up to 17 global asset classes. Our software handles all the trading, rebalancing, and other busywork to help grow your wealth for the long term.</p>
-                </div>
-            </RiskAssessment>
-        </Container>
+
+                    <div id="risk--secondContainer">
+                        <p>Interact with our risk assessment scale</p>
+                        <p>Just answer a few questions, and we’ll build you a personalized portfolio of low-cost index funds from up to 17 global asset classes. Our software handles all the trading, rebalancing, and other busywork to help grow your wealth for the long term.</p>
+                    </div>
+                </RiskAssessment>
+            </Container>
         </>
     )
 }

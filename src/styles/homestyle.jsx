@@ -275,7 +275,72 @@ width: 100vw;
 display: grid;
 padding-left: 40px;
 padding-right: 32px;
-grid-template-columns: repeat(2, 1fr);
+grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 font-family: ClashDisplay-Variable; 
 grid-gap: 16px;
+
+div:not(:first-child) {
+    display: flex;
+
+    p{
+        margin-left: 16px;
+    }
+}
+
+`
+
+export const Riskscale = styled.div`
+    background: whitesmoke;
+    border-radius: 16px;
+    padding: 16px;
+    width: 50%;
+    box-shadow: .5px .5px 8px .5px #323143;
+    place-items: center;
+    display: grid;
+    margin-bottom: 32px;
+
+    p{
+        font-weight: 500;
+    }
+
+    input{
+        width: 100%;
+        margin-top: 16px;
+    }
+
+
+`
+
+export const StyledRangeInput = styled.input`
+  /* Remove the default styles */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-left: 16px;
+
+
+  /* Set the width to fill its container */
+//   width: 100%;
+
+  background-color: black;
+  height: 5px;
+  border-radius: 4px;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #FBCA3F;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    cursor: pointer;
+  }
 `

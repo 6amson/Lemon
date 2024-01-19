@@ -1,3 +1,7 @@
+@import "../css/bespoke-serif.css";
+@import "../css/dancing-script.css";
+
+
 #heroPage--right {
     background-image: url('../images/homepagePhoto.jpg');
     background-repeat: no-repeat;
@@ -10,14 +14,45 @@
     cursor: pointer;
 }
 
+#risk--secondContainer{
+    display: block;
+    background: #FBCA3F;
+    width: fit-content;
+    padding: 32px;
+    place-items: center;
+
+    p:first-child{
+        font-size: 72px;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    p:nth-child(2){
+        font-size: 16px;
+    }
+}
+
 @media (max-width: 850px) {
     #menuIcon {
         display: block;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 560px) {
     #teamLemon{
         height: 150px;
     }
+
+    
+#risk--secondContainer{
+    margin-left: -16px;
+
+    p:first-child{
+        font-size: 56px;
+    }
+
+    p:nth-child(2){
+
+    }
+}
 }
