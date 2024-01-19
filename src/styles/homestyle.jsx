@@ -4,6 +4,7 @@ import "../css/clash-display.css";
 import "../css/dancing-script.css";
 
 export const Container = styled.div`
+
    * {
     box-sizing: border-box;
     padding: 0;
@@ -14,7 +15,7 @@ export const Container = styled.div`
 `
 export const Header = styled.header`
     height: 80px;
-    width: 100vw;
+    width: calc(100vw - 20px);
     top: -8px;
     box-shadow: .5px .5px 8px .5px #323143;
     display: flex;
@@ -25,6 +26,8 @@ export const Header = styled.header`
     font-family: ClashDisplay-Variable; 
     font-weight: 500;
     font-size: 18px;
+    background: black;
+
 
     img:first-child{
     rotate: -45deg;
@@ -40,6 +43,7 @@ export const Header = styled.header`
 export const Ul = styled.ul`
     display: flex;
     list-style:  none;
+
    
     li{
         margin-right: 64px;
@@ -49,8 +53,9 @@ export const Ul = styled.ul`
         transition: background .5s ease-in;
         position: relative;
         place-self: center;
-        background: linear-gradient(to left, #FBCA3F 50%, rgb(255, 255, 255) 50%);
+        background: linear-gradient(to left, #FBCA3F 50%, black 50%);
         background-size: 200% 100%; 
+        color: white;
 
         &:hover{
         color: #323143;
@@ -75,21 +80,23 @@ export const Button = styled.button`
     width: fit content;
     padding: 10px 20px;
     background-color: transparent;
-    border: solid 1px #4A686A;
+    border: solid 1px #FBCA3F;
     border-radius: 4px;
     font-family: ClashDisplay-Variable; 
     margin-right: 8px;
     font-weight: 500;
     font-size: 18px;
+    color: #FBCA3F;
+    transition: background .5s ease-in, color .5s ease;
 
     &:first-child{
-        background:  #FBCA3F;
-        color: black;
+        background: #FBCA3F;
+        color:  black;
     }
 
     &:hover{
         background: #111626;
-        transition: background .2s ease-in;
+        transition: background .2s ease-in, color .5s ease;
         color: white;
         cursor: pointer;
 
@@ -102,14 +109,15 @@ export const Button = styled.button`
 `
 
 export const HeroContainer = styled.div`
-    height: fit-content;
+    height: max-content;
     margin-top: 128px;
-    width: 100vw;
+    width: calc(100vw - 20px);
    display: grid;
    padding-left: 40px;
    padding-right: 32px;
    grid-template-columns: repeat(2, 1fr);
    font-family: ClashDisplay-Variable; 
+
 
    div:first-child{
         p:first-child{
@@ -118,15 +126,28 @@ export const HeroContainer = styled.div`
         margin-bottom: 32px;
 
         @media (max-width: 500px) {
-            font-size: 28px;
+        font-size: 24px;
+        }
         }
 
+        @media (max-width: 850px) {
+            button{
+                display: block;
+                margin-bottom: 64px;
+            }
         }
+       
+
 
         p:nth-child(2){
             font-size: 64px;
             margin-bottom: 64px;
             font-weight: 700;
+
+            @media (max-width: 750px) {
+                margin-bottom: 32px;
+                backgorund: red;
+            }
 
             @media (max-width: 500px) {
             font-size: 50px;
@@ -141,14 +162,24 @@ export const HeroContainer = styled.div`
    }
 
    button{
-    background: #FBCA3F;
-    color: black;
+    background: black;
+    color: white;
+    border: solid 1px black;
+    font-weight: 600;
+    padding: 20px 30px;
+    z-index: 10;
+
+
+    &:hover{
+        background: #FBCA3F;
+        color: black;
+    }
    }
 
    @media (max-width: 750px) {
     grid-template-columns: 1fr;
    grid-template-rows: repeat(2, 1fr);
-    margin-top: 16px;
+   grid gap: 100px;    margin-top: 16px;
     margin-bottom: 64px;
   }
 
@@ -157,7 +188,8 @@ export const HeroContainer = styled.div`
 export const BrandContainer = styled.div`
 margin-top: 128px;
 margin-bottom: 64px;
-width: 100vw;
+width: calc(100vw - 20px);
+
 
 
 p{
@@ -201,7 +233,7 @@ export const Servicesoffered = styled.div`
  padding-left: 32px;
  padding-right: 16px;
  color: whitesmoke;
- width: 100vw;
+ width: calc(100vw - 20px);
 
  div{
     display: flex;
@@ -237,8 +269,9 @@ export const Servicesoffered = styled.div`
 `
 
 export const RiskAssessment = styled.div`
- display: flex;
- flex-wrap: wrap;
- width: 100vw;
- 
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+width: calc(100vw - 20px);
+grid-gap: 16px;
+backgorund: red;
 `

@@ -1,6 +1,6 @@
 import { Container, Header, Button, Ul, HeroContainer, BrandContainer, Servicesoffered, RiskAssessment } from "../../styles/homestyle";
 import logohome from "../../images/logohome.svg";
-import menuIcon from "../../images/menuIcon.svg";
+import menuIcon from "../../images/iconsMenu.png";
 import airbnb from "../../images/airbnb.svg";
 import cocacola from "../../images/cocacola.svg";
 import slack from "../../images/slack.svg";
@@ -63,7 +63,16 @@ export default function Home() {
                 </Servicesoffered>
                 <RiskAssessment>
                     <div>
-                        
+                        <input
+                            type="range"
+                            // id={`rangeInput-${key}`}
+                            min="0"
+                            max="10"
+                            // value={values[key]}
+                            step="1"
+                            // onChange={(event) => handleInputChange(key, event)}
+                        />
+
                     </div>
                     <div>
 
