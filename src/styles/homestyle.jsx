@@ -262,8 +262,8 @@ export const Servicesoffered = styled.div`
 
     @media (max-width: 800px) {
         margin-bottom: 32px;
-        padding-top: 16px;
-        padding-bottom: 16px;
+        padding-top: 32px;
+        padding-bottom: 32px;
     }
  }
 `
