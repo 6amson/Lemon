@@ -426,14 +426,14 @@ export const Appsection = styled.div`
   font-family: ClashDisplay-Variable; 
 
   div:first-child{
-    place-items: center; 
+    text-align: center;
 
     @media (max-width: 850px) {
         margin-bottom: 32px;
     }
 
-    p:not(p:first-child){
-
+    p:not(:first-child){
+        
     }
     
     p:first-child{
@@ -444,6 +444,14 @@ export const Appsection = styled.div`
         span{
             font-family: DancingScript-Regular;
             margin-left: 16px;
+        }
+
+        span:not(:first-child){
+            font-size: 72px;
+            font-weight: 700;
+            color: #FBCA3F;
+           font-family: ClashDisplay-Variable; 
+
         }
     }
   }
@@ -465,8 +473,91 @@ export const Appsectionimage = styled.div`
   }
 `
 
-export const AppsectionPert = styled.div`
-    font-size: 72px;
-    font-weight: 700;
-    color: #FBCA3F;
+export const Footer = styled.div`
+position: relative;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+padding: 128px 32px 32px 40px;
+font-family: ClashDisplay-Variable;
+
+div:first-child{
+    img{
+    rotate: -45deg;
+    cursor: pointer;
+    }
+
+    @media (max-width: 770px){
+        margin-bottom: 32px;
+    }
+}
+
+ul{
+    list-style: none;
+
+    li:not(:first-child){
+        margin-bottom: 8px;
+        cursor: pointer;
+    }
+
+    li:first-child{
+        font-weight: bold;
+        margin-bottom: 16px;
+    }
+}
+
+
+@media (max-width: 770px){
+    display: block;
+}
+`
+
+export const FinalfooterList = styled.div`
+    text-align: center;
+    width: fit-content;
+
+  ul{
+    display: flex;
+    list-style: none;
+
+    li{
+        margin-right: 16px;
+        border: solid 1px black;
+        border-radius: 50%;
+        display: flex;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(to left, #FBCA3F 50%, rgb(255, 255, 255) 50%);
+        background-size: 200% 100%; 
+        transition: background-position 0.3s ease;
+        cursor: pointer;
+
+        &:hover{
+            background-position: -100% 0;
+        }
+
+        img{
+        width: 15px;
+        height: 15px;
+        display: flex;
+        align-self: center;
+        margin: 20px;
+        }
+    }
+  }
+
+  @media (max-width: 770px){
+    margin-bottom: 32px;
+    margin-top: 48px;
+}
+`
+
+export const Footerfinal = styled.div`
+  font-family: ClashDisplay-Variable;
+  font-weight: 500;
+  margin-left: 40px;
+
+  @media (max-width: 770px){
+    margin-left: 16px;
+}
 `

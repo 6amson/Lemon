@@ -1,4 +1,4 @@
-import { Container, Header, Button, Ul, HeroContainer, BrandContainer, Servicesoffered, RiskAssessment, Riskscale, StyledRangeInput, Riskscaleoptions, Riskscaleoptionsmore, Appsection, Appsectionimage, AppsectionPert,Riskcomment } from "../../styles/homestyle";
+import { Container, Header, Button, Ul, HeroContainer, BrandContainer, Servicesoffered, RiskAssessment, Riskscale, StyledRangeInput, Riskscaleoptions, Riskscaleoptionsmore, Appsection, Appsectionimage, Footer, Riskcomment, FinalfooterList, Footerfinal } from "../../styles/homestyle";
 import logohome from "../../images/logohome.svg";
 import menuIcon from "../../images/iconsMenu.png";
 import airbnb from "../../images/airbnb.svg";
@@ -10,8 +10,9 @@ import coinLemon from "../../images/coinLemon.png";
 import teamLemon from "../../images/teamLemon.png"
 import phoneLemon from "../../images/phoneLemon.png";
 import model1 from "../../images/lemonModel.png";
-import model2 from "../../images/suitLemon.png";
-import model3 from "../../images/olderwomanLemon.png";
+import instagram from "../../images/instagram.svg";
+import twitter from "../../images/twitter.svg";
+import linkedin from "../../images/linkedin.svg";
 
 
 
@@ -106,8 +107,10 @@ export default function Home() {
                 </RiskAssessment>
                 <Appsection>
                     <div>
-                        <p>With a small fee, <span>we can do big things at</span></p>
-                        <AppsectionPert>0.25%.</AppsectionPert>
+                        <div>
+                            <p>With a small fee, <span>we can do big things at</span><span>0.25%.</span></p>
+                            {/* <AppsectionPert>0.25%.</AppsectionPert> */}
+                        </div>
                         <p>For just 0.25% a year, Automated Investing Account clients get all the benefits of always-on automation,
                             expert-curated portfolios, and Tax-Loss Harvesting that typically covers our fee more than 11x over.</p>
                     </div>
@@ -117,6 +120,31 @@ export default function Home() {
                         <div id="appsection--spareimage2"></div>
                     </Appsectionimage>
                 </Appsection>
+                <Footer>
+                    <div class="logo"><img src={logohome} alt="Lemon logo" width="50px" height="50px" /></div>
+                    <ul class="firstListF">
+                        <li>Sitemap</li>
+                        <li>Help center</li>
+                        <li>Our divisions</li>
+                        <li>Industry sectors</li>
+                        <li>Company information</li>
+                        <li>More info on Lemon</li>
+                    </ul>
+                    <FinalfooterList>
+                        <ul class="secondListF">
+                            <li><img src={instagram} alt="instagram Icon" /></li>
+                            <li><img src={linkedin} alt="linkedin Icon" /></li>
+                            <li><img src={twitter} alt="twitter Icon" /></li>
+                        </ul>
+
+                        <div class="thirdListF">
+                            <p>Contact Us</p>
+                        </div>
+                    </FinalfooterList>
+                </Footer>
+                <Footerfinal>
+                    2022 &copy; - all rights reserved.
+                </Footerfinal>
             </Container>
         </>
     )
