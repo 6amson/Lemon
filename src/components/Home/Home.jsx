@@ -13,7 +13,15 @@ import model1 from "../../images/lemonModel.png";
 import instagram from "../../images/instagram.svg";
 import twitter from "../../images/twitter.svg";
 import linkedin from "../../images/linkedin.svg";
+import { createGlobalStyle } from 'styled-components';
 
+const GlobalStyle = createGlobalStyle`
+  body, h1, h2, h3, p, div, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+`;
 
 
 
@@ -23,6 +31,7 @@ export default function Home() {
 
     return (
         <>
+            <GlobalStyle />
             <Container>
                 <Header>
                     <img id="logo" src={logohome} alt="=logo" width="50px" height="50px" />

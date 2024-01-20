@@ -4,25 +4,27 @@ import "../css/clash-display.css";
 import "../css/dancing-script.css";
 
 export const Container = styled.div`
+overflow-x: hidden;
+
 
    * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     position: relative;
-    left: -8px;
+    // left: -8px;
 } 
 `
 export const Header = styled.header`
     height: 80px;
     width: 100vw;
-    top: -8px;
+    // top: -8px;
     box-shadow: .5px .5px 8px .5px #323143;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 16px;
-    padding-left: 32px;
+    padding-right: 24px;
+    padding-left: 16px;
     font-family: ClashDisplay-Variable; 
     font-weight: 500;
     font-size: 18px;
@@ -113,7 +115,7 @@ export const HeroContainer = styled.div`
     margin-top: 128px;
     width: 100vw;
    display: grid;
-   padding-left: 40px;
+   padding-left: 16px;
    padding-right: 32px;
    grid-template-columns: repeat(2, 1fr);
    font-family: ClashDisplay-Variable; 
@@ -229,7 +231,7 @@ div{
 export const Servicesoffered = styled.div`
  background: black;
  height: fit-content;
- padding-left: 32px;
+ padding-left: 16px;
  padding-right: 16px;
  color: whitesmoke;
  width: 100vw;
@@ -272,7 +274,7 @@ height: max-content;
 margin-top: 128px;
 width: 100vw;
 display: grid;
-padding-left: 40px;
+padding-left: 16px;
 padding-right: 32px;
 grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 font-family: ClashDisplay-Variable; 
@@ -285,7 +287,6 @@ button{
     border: solid 1px black;
     font-weight: 600;
     padding: 20px 30px;
-    margin-left: -8px;
     margin-top: 32px;
 
 
@@ -302,6 +303,10 @@ div:not(:first-child) {
     }
 }
 
+
+@media (max-width: 600px) {
+    padding-left: 8px;    
+}
 `
 
 export const Riskscale = styled.div`
@@ -313,7 +318,6 @@ export const Riskscale = styled.div`
     place-items: center;
     display: grid;
     margin-bottom: 32px;
-    margin-left: -8px;
 
     p{
         font-weight: 600;
@@ -524,7 +528,9 @@ export const FinalfooterList = styled.div`
         margin-right: 16px;
         border: solid 1px black;
         border-radius: 50%;
+        overflow-x: visible;
         display: flex;
+        justify-content: center;
         width: 40px;
         height: 40px;
         background: linear-gradient(to left, #FBCA3F 50%, rgb(255, 255, 255) 50%);
@@ -558,7 +564,6 @@ export const Footerfinal = styled.div`
   margin-left: 40px;
 
   @media (max-width: 770px){
-    margin-left: 16px;
     margin-bottom: 32px;
 }
 `
