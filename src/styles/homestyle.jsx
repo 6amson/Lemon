@@ -559,5 +559,6 @@ export const Footerfinal = styled.div`
 
   @media (max-width: 770px){
     margin-left: 16px;
+    margin-bottom: 32px;
 }
 `
