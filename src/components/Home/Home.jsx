@@ -46,17 +46,21 @@ export default function Home() {
 
     const handleInputChange = (event) => {
         setRangeValue(parseInt(event.target.value, 10));
-        const filteredObject = riskObjects.filter((risk) => parseInt(risk.riskScore, 10) === rangeValue);
-        setAlternative(filteredObject[0].riskOptions.alternative);
-        setCommodities(filteredObject[0].riskOptions.commodities);
-        setEmergingStock(filteredObject[0].riskOptions.emergingStock);
-        setForeignBond(filteredObject[0].riskOptions.foreignBond);
-        setForeignStock(filteredObject[0].riskOptions.foreignStock);
-        setNigeriaBond(filteredObject[0].riskOptions.nigerianBond);
-        setNigeriaStock(filteredObject[0].riskOptions.nigerianStock);
-        setRealEstate(filteredObject[0].riskOptions.realEstate);
-        setTBills(filteredObject[0].riskOptions.tBills);
-        setTechStock(filteredObject[0].riskOptions.techStock);
+        const riskChosen = localStorage.getItem('risk--object');
+        if (riskChosen) {
+            const filteredObject = JSON.parse(riskChosen).filter((risk) => parseInt(risk.riskScore, 10) === rangeValue);
+            setAlternative(filteredObject[0].riskOptions.alternative);
+            setCommodities(filteredObject[0].riskOptions.commodities);
+            setEmergingStock(filteredObject[0].riskOptions.emergingStock);
+            setForeignBond(filteredObject[0].riskOptions.foreignBond);
+            setForeignStock(filteredObject[0].riskOptions.foreignStock);
+            setNigeriaBond(filteredObject[0].riskOptions.nigerianBond);
+            setNigeriaStock(filteredObject[0].riskOptions.nigerianStock);
+            setRealEstate(filteredObject[0].riskOptions.realEstate);
+            setTBills(filteredObject[0].riskOptions.tBills);
+            setTechStock(filteredObject[0].riskOptions.techStock);
+        }
+        return;
     }
 
     const nsWidth = `${2 * nigerianStock}%`;
@@ -153,9 +157,8 @@ export default function Home() {
                 </Servicesoffered>
                 <RiskAssessment>
                     <div>
-                        <p>{rangeValue}</p>
                         <Riskscale>
-                            <p>Risk assessment scale: 10.0</p>
+                            <p>Risk assessment scale: {rangeValue}.0</p>
                             <StyledRangeInput
                                 type="range"
                                 min="0"
@@ -170,7 +173,7 @@ export default function Home() {
                             <div style={{ backgroundColor: 'rgb(189, 239, 208)', width: fsWidth }}><p>Foreign stocks:</p> <p>{foreignStock}%</p></div>
                             <div style={{ backgroundColor: 'rgb(239, 209, 189)', width: tsWidth }}><p>Tech stocks:</p> <p>{techStock}%</p></div>
                             <div style={{ backgroundColor: 'rgb(189, 222, 239)', width: nbWidth }}><p>Nigerian bonds:</p> <p>{nigerianBond}%</p></div>
-                            <div style={{ backgroundColor: 'rgb(239, 189, 220)' , width: fbWidth}}><p>Foreign bonds:</p> <p>{foreignBond}%</p></div>
+                            <div style={{ backgroundColor: 'rgb(239, 189, 220)', width: fbWidth }}><p>Foreign bonds:</p> <p>{foreignBond}%</p></div>
                             <div style={{ backgroundColor: 'rgb(220, 200, 189)', width: emergeWidth }}><p>Emerging stocks:</p> <p>{emergingStock}%</p></div>
                             <div style={{ backgroundColor: 'rgb(239, 189, 191)', width: commWidth }}><p>Commodities:</p> <p>{commodities}%</p></div>
                         </Riskscaleoptions>
