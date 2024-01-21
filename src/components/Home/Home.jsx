@@ -1,6 +1,23 @@
-import { Container, Header, Button, Ul, HeroContainer, BrandContainer, Servicesoffered, RiskAssessment, Riskscale, StyledRangeInput, Riskscaleoptions, Riskscaleoptionsmore, Appsection, Appsectionimage, Footer, Riskcomment, FinalfooterList, Footerfinal } from "../../styles/homestyle";
+import {
+    Container,
+    Button,
+    HeroContainer,
+    BrandContainer,
+    Servicesoffered,
+    RiskAssessment,
+    Riskscale,
+    StyledRangeInput,
+    Riskscaleoptions,
+    Riskscaleoptionsmore,
+    Appsection,
+    Appsectionimage,
+    Footer,
+    Riskcomment,
+    FinalfooterList,
+    Footerfinal
+} from "../../styles/homestyle";
+import { Header } from "./Header";
 import logohome from "../../images/logohome.svg";
-import menuIcon from "../../images/iconsMenu.png";
 import airbnb from "../../images/airbnb.svg";
 import cocacola from "../../images/cocacola.svg";
 import slack from "../../images/slack.svg";
@@ -31,7 +48,6 @@ export default function Home() {
 
     const [riskObjects, setRiskObjects] = useState([{}]);
     const [rangeValue, setRangeValue] = useState(5);
-    const [filteredValue, setFilteredValue] = useState([]);
     const [nigerianStock, setNigeriaStock] = useState(0);
     const [foreignStock, setForeignStock] = useState(0);
     const [techStock, setTechStock] = useState(0);
@@ -110,20 +126,7 @@ export default function Home() {
         <>
             <GlobalStyle />
             <Container>
-                <Header>
-                    <img id="logo" src={logohome} alt="=logo" width="50px" height="50px" />
-                    <Ul>
-                        <li>Investments</li>
-                        <li>Portfolio</li>
-                        <li>Stocks</li>
-                        <li>About Us</li>
-                    </Ul>
-                    <div>
-                        <Button>Login</Button>
-                        <Button>Signup</Button>
-                    </div>
-                    <img src={menuIcon} alt="menuicon" width="35px" height="35px" id="menuIcon" />
-                </Header>
+                <Header/>
                 <HeroContainer>
                     <div>
                         <p>Lets' help you grow your assets.</p>

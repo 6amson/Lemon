@@ -16,10 +16,9 @@ heigth: fit;
   box-sizing: border-box;
 }
 `
-export const Header = styled.header`
+export const HeaderS = styled.header`
     height: 80px;
     width: 100vw;
-    // top: -8px;
     box-shadow: .5px .5px 8px .5px #323143;
     display: flex;
     align-items: center;
@@ -125,6 +124,7 @@ export const HeroContainer = styled.div`
    div:first-child{
         p:first-child{
         font-size: 32px;
+        font-weight: 500;
         margin-top: 64px;
         margin-bottom: 32px;
 
@@ -536,6 +536,10 @@ ul{
 export const FinalfooterList = styled.div`
     text-align: center;
     width: fit-content;
+
+    @media (max-width: 770px){
+        text-align: start;
+    }
 
   ul{
     display: flex;
