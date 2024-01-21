@@ -14,6 +14,8 @@ import instagram from "../../images/instagram.svg";
 import twitter from "../../images/twitter.svg";
 import linkedin from "../../images/linkedin.svg";
 import { createGlobalStyle } from 'styled-components';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const GlobalStyle = createGlobalStyle`
   body, h1, h2, h3, p, div, ul, li {
@@ -27,7 +29,78 @@ const GlobalStyle = createGlobalStyle`
 
 export default function Home() {
 
-    const dynamicWidth1 = `${10 * 4.5}%`;
+    const [riskObjects, setRiskObjects] = useState([{}]);
+    const [rangeValue, setRangeValue] = useState(5);
+    const [filteredValue, setFilteredValue] = useState([]);
+    const [nigerianStock, setNigeriaStock] = useState(0);
+    const [foreignStock, setForeignStock] = useState(0);
+    const [techStock, setTechStock] = useState(0);
+    const [emergingStock, setEmergingStock] = useState(0);
+    const [nigerianBond, setNigeriaBond] = useState(0);
+    const [foreignBond, setForeignBond] = useState(0);
+    const [alternative, setAlternative] = useState(0);
+    const [commodities, setCommodities] = useState(0);
+    const [tBills, setTBills] = useState(0);
+    const [realEstate, setRealEstate] = useState(0);
+
+
+    const handleInputChange = (event) => {
+        setRangeValue(parseInt(event.target.value, 10));
+        const filteredObject = riskObjects.filter((risk) => parseInt(risk.riskScore, 10) === rangeValue);
+        setAlternative(filteredObject[0].riskOptions.alternative);
+        setCommodities(filteredObject[0].riskOptions.commodities);
+        setEmergingStock(filteredObject[0].riskOptions.emergingStock);
+        setForeignBond(filteredObject[0].riskOptions.foreignBond);
+        setForeignStock(filteredObject[0].riskOptions.foreignStock);
+        setNigeriaBond(filteredObject[0].riskOptions.nigerianBond);
+        setNigeriaStock(filteredObject[0].riskOptions.nigerianStock);
+        setRealEstate(filteredObject[0].riskOptions.realEstate);
+        setTBills(filteredObject[0].riskOptions.tBills);
+        setTechStock(filteredObject[0].riskOptions.techStock);
+    }
+
+    const nsWidth = `${2 * nigerianStock}%`;
+    const fsWidth = `${2 * foreignStock}%`;
+    const tsWidth = `${2 * techStock}%`;
+    const nbWidth = `${2 * nigerianBond}%`;
+    const fbWidth = `${2 * foreignBond}%`;
+    const commWidth = `${2 * commodities}%`;
+    const emergeWidth = `${2 * emergingStock}%`;
+
+
+
+
+    useEffect(() => {
+        console.log('Use effect running ...')
+        const getrisk = async () => {
+            try {
+                const res = await axios.get(`https://lemonbackend.netlify.app/.netlify/functions/index/getrisk`);
+
+                if (res.status === 200) {
+                    localStorage.setItem("risk--object", JSON.stringify(res.data));
+                    setRiskObjects(res.data);
+                    const filteredRisk = res.data.filter((risk) => parseInt(risk.riskScore, 10) === rangeValue);
+
+                    setAlternative(filteredRisk[0].riskOptions.alternative);
+                    setCommodities(filteredRisk[0].riskOptions.commodities);
+                    setEmergingStock(filteredRisk[0].riskOptions.emergingStock);
+                    setForeignBond(filteredRisk[0].riskOptions.foreignBond);
+                    setForeignStock(filteredRisk[0].riskOptions.foreignStock);
+                    setNigeriaBond(filteredRisk[0].riskOptions.nigerianBond);
+                    setNigeriaStock(filteredRisk[0].riskOptions.nigerianStock);
+                    setRealEstate(filteredRisk[0].riskOptions.realEstate);
+                    setTBills(filteredRisk[0].riskOptions.tBills);
+                    setTechStock(filteredRisk[0].riskOptions.techStock);
+                } else {
+                    return;
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+        getrisk();
+    }, []);
 
     return (
         <>
@@ -80,30 +153,31 @@ export default function Home() {
                 </Servicesoffered>
                 <RiskAssessment>
                     <div>
+                        <p>{rangeValue}</p>
                         <Riskscale>
                             <p>Risk assessment scale: 10.0</p>
                             <StyledRangeInput
                                 type="range"
-                                // id={`rangeInput-${key}`}
                                 min="0"
                                 max="10"
-                                // value={values[key]}
+                                value={rangeValue}
                                 step="1"
-                            // onChange={(event) => handleInputChange(key, event)}
+                                onChange={handleInputChange}
                             />
                         </Riskscale>
                         <Riskscaleoptions>
-                            <div style={{ backgroundColor: 'rgb(189, 189, 239)', width: dynamicWidth1, }}>Nigerian stocks: <p>40%</p></div>
-                            <div style={{ backgroundColor: 'rgb(189, 239, 208)' }}>Foreign stocks: <p>40%</p></div>
-                            <div style={{ backgroundColor: 'rgb(239, 209, 189)' }}>Tech stocks: <p>40%</p></div>
-                            <div style={{ backgroundColor: 'rgb(189, 222, 239)' }}>Nigerian bonds: <p>40%</p></div>
-                            <div style={{ backgroundColor: 'rgb(239, 189, 220)' }}>Foreign bonds: <p>40%</p></div>
-                            <div style={{ backgroundColor: 'rgb(239, 189, 191)' }}>Commodities: <p>40%</p></div>
+                            <div style={{ backgroundColor: 'rgb(189, 189, 239)', width: nsWidth, }}><p>Nigerian stocks:</p> <p>{nigerianStock}%</p></div>
+                            <div style={{ backgroundColor: 'rgb(189, 239, 208)', width: fsWidth }}><p>Foreign stocks:</p> <p>{foreignStock}%</p></div>
+                            <div style={{ backgroundColor: 'rgb(239, 209, 189)', width: tsWidth }}><p>Tech stocks:</p> <p>{techStock}%</p></div>
+                            <div style={{ backgroundColor: 'rgb(189, 222, 239)', width: nbWidth }}><p>Nigerian bonds:</p> <p>{nigerianBond}%</p></div>
+                            <div style={{ backgroundColor: 'rgb(239, 189, 220)' , width: fbWidth}}><p>Foreign bonds:</p> <p>{foreignBond}%</p></div>
+                            <div style={{ backgroundColor: 'rgb(220, 200, 189)', width: emergeWidth }}><p>Emerging stocks:</p> <p>{emergingStock}%</p></div>
+                            <div style={{ backgroundColor: 'rgb(239, 189, 191)', width: commWidth }}><p>Commodities:</p> <p>{commodities}%</p></div>
                         </Riskscaleoptions>
                         <Riskscaleoptionsmore>
-                            <div>Real estate: <p>0%</p></div>
-                            <div>T-bills: <p>0%</p></div>
-                            <div>Alternative: <p>0%</p></div>
+                            <div>Real estate: <p>{realEstate}%</p></div>
+                            <div>T-bills: <p>{tBills}%</p></div>
+                            <div>Alternative: <p>{alternative}%</p></div>
                         </Riskscaleoptionsmore>
                         <Button>Get started</Button>
                     </div>
@@ -118,7 +192,6 @@ export default function Home() {
                     <div>
                         <div>
                             <p>With a small fee, <span>we can do big things at</span><span>0.25%.</span></p>
-                            {/* <AppsectionPert>0.25%.</AppsectionPert> */}
                         </div>
                         <p>For just 0.25% a year, Automated Investing Account clients get all the benefits of always-on automation,
                             expert-curated portfolios, and Tax-Loss Harvesting that typically covers our fee more than 11x over.</p>

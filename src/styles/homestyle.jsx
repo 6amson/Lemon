@@ -4,16 +4,17 @@ import "../css/clash-display.css";
 import "../css/dancing-script.css";
 
 export const Container = styled.div`
-overflow-x: hidden;
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+position: relative;
+width: 100%;
+overflow: hidden;
+heigth: fit;
 
-
-   * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    // left: -8px;
-} 
+* {
+  box-sizing: border-box;
+}
 `
 export const Header = styled.header`
     height: 80px;
@@ -336,12 +337,23 @@ export const Riskscale = styled.div`
 
 export const Riskscaleoptions = styled.div`
     div{
+        position: relative;
         display: flex;
         background: red;
         margin-bottom: 16px;
         padding: 8px;
         margin-right: 16px;
         border-radius: 8px;
+        
+
+        p:first-child{
+            width: 150px;
+            position: absolute;
+        }
+
+        p:not(:first-child){
+            margin-left: 170px;
+        }
     }
 `
 
@@ -482,7 +494,7 @@ position: relative;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
-padding: 128px 32px 32px 40px;
+padding: 64px 32px 32px 40px;
 font-family: ClashDisplay-Variable;
 
 div:first-child{
