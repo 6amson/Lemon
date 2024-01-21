@@ -319,6 +319,7 @@ export const Riskscale = styled.div`
     background:  white;
     border-radius: 16px;
     padding: 16px;
+
     width: 70%;
     box-shadow: .5px .5px 3px .5px #323143;
     place-items: center;
@@ -375,7 +376,6 @@ export const StyledRangeInput = styled.input`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  margin-left: 16px;
   background-color: black;
   background: linear-gradient(to right, grey, whitesmoke, black);
   height: 5px;
