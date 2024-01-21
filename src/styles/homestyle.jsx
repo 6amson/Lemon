@@ -295,6 +295,11 @@ button{
         background: #FBCA3F;
         color: black;
     }
+
+    
+    @media (max-width: 850px) {
+        display: block;
+    }
    }
 
 div:not(:first-child) {
