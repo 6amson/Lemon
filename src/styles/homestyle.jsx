@@ -63,6 +63,7 @@ export const Ul = styled.ul`
         color: #323143;
         transition: background .3s ease-in, background-position 0.3s ease;
         background-position: -100% 0;
+        border-radius: 8px;
         }
 
         
